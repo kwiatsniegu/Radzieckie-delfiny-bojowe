@@ -190,9 +190,9 @@ class Sprite(pygame.sprite.Sprite):
         self.depth = self.rect.midbottom[1]
 
 if __name__=='__main__':
-    screen = pygame.display.set_mode((424, 320))
     level = Level()
     level.load_file('level.map')
+    screen = pygame.display.set_mode((MAP_TILE_WIDTH*level.width, MAP_TILE_HEIGHT*level.height))
     SPRITE_CACHE = TileCache(32, 32)
     sprites = pygame.sprite.RenderUpdates()
     for pos, tile in sorted(list(level.items.items()), key=lambda tup: tup[0][0]):

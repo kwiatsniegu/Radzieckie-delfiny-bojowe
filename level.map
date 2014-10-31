@@ -1,11 +1,18 @@
 [level]
 tileset = ground.png
-map = ..........
-      .#####.##.
-      .#b#b#..#.
-      .#..b####.
-      .##.##.b#.
-      .......##.
+map = ..............#######
+      .#####c########.....#
+      .#b#b#..#.....#..#..#
+      .#..b####.....#####.#
+      .##.##.b#.....b...#b#
+      .......########......
+	  ..............#####.#
+      .#####.########.....#
+      .#b#b#..#.....#cc#..#
+      .#..b####..c..#####.#
+      .##.##.b#.....b...#b#
+      .......########......
+	  ..###..bcb...#.....##
 
 [.]
 name = floor
@@ -16,7 +23,12 @@ name = wall
 wall = true
 block = true
 [b]
-name = crate
+name = skeleton
 tile = 0, 3
 block = true
 sprite = skeleton.png
+[c]
+name = crate
+tile = 0, 3
+block = true
+sprite = crate.png
