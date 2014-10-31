@@ -189,16 +189,15 @@ class Sprite(pygame.sprite.Sprite):
         self.rect.move_ip(dx, dy)
         self.depth = self.rect.midbottom[1]
 
-if __name__=='__main__':
+if __name__ == '__main__':
     level = Level()
     level.load_file('level.map')
     screen = pygame.display.set_mode((MAP_TILE_WIDTH*level.width, MAP_TILE_HEIGHT*level.height))
     SPRITE_CACHE = TileCache(32, 32)
     sprites = pygame.sprite.RenderUpdates()
-    for pos, tile in sorted(list(level.items.items()), key=lambda tup: tup[0][0]):
+    for pos, tile in sorted(list(level.items.items()), key=lambda tup: tup[0][1]*10+tup[0][0]):
         sprite = Sprite(pos, SPRITE_CACHE[tile["sprite"]])
         sprites.add(sprite)
-
     clock = pygame.time.Clock()
 
     background, overlay_dict = level.render()
